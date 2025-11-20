@@ -169,10 +169,11 @@ export async function POST(request: NextRequest) {
       } else if (content.featured_image_url) {
         // Fallback: use single featured image if no multiple images
         try {
-          featuredMediaId = await uploadWordPressMedia(
+          const featuredMedia = await uploadWordPressMedia(
             wpCredentials,
             content.featured_image_url
           )
+          featuredMediaId = featuredMedia.id
         } catch (error) {
           console.error("Error uploading featured image:", error)
         }
