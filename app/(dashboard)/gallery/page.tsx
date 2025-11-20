@@ -46,7 +46,7 @@ export default function GalleryPage() {
 
       // Filter only content with images (either featured_image_url or metadata.images)
       const contentWithImages = (data.content || []).filter(
-        (item: ImageContent) => item.featured_image_url || item.metadata?.images?.length > 0
+        (item: ImageContent) => item.featured_image_url || (item.metadata?.images?.length ?? 0) > 0
       )
 
       setImages(contentWithImages)
@@ -122,7 +122,7 @@ export default function GalleryPage() {
                 <div>
                   <p className="text-3xl font-bold text-blue-900">
                     {images.reduce((total, item) => {
-                      const imageCount = item.metadata?.images?.length || (item.featured_image_url ? 1 : 0)
+                      const imageCount = (item.metadata?.images?.length ?? 0) || (item.featured_image_url ? 1 : 0)
                       return total + imageCount
                     }, 0)}
                   </p>
