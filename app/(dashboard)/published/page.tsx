@@ -15,6 +15,7 @@ interface PublishedContent {
   published_at: string
   metadata: any
   featured_image_url?: string
+  status: string
 }
 
 export default function PublishedPage() {
