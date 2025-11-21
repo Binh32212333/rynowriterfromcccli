@@ -156,7 +156,7 @@ export default function QuickWritePage() {
                 </div>
                 <ul className="text-xs text-gray-600 space-y-1">
                   <li>✓ 5 AI-generated images</li>
-                  <li>✓ Grok-4 (best model)</li>
+                  <li>✓ Grok Beta (latest model)</li>
                   <li>✓ Smart agent workflow</li>
                   <li>✓ Enhanced niche images</li>
                   <li>✓ 1000 words</li>
@@ -186,7 +186,7 @@ export default function QuickWritePage() {
                 </div>
                 <ul className="text-xs text-gray-600 space-y-1">
                   <li>✓ 1 featured image</li>
-                  <li>✓ Grok-4 (best model)</li>
+                  <li>✓ Grok Beta (latest model)</li>
                   <li>✓ Standard workflow</li>
                   <li>✓ Fast generation</li>
                   <li>✓ 1000 words</li>
@@ -216,7 +216,7 @@ export default function QuickWritePage() {
                 </div>
                 <ul className="text-xs text-gray-600 space-y-1">
                   <li>✓ 1 featured image</li>
-                  <li>✓ Grok-3-mini (faster)</li>
+                  <li>✓ Grok 2 Latest (faster)</li>
                   <li>✓ Budget workflow</li>
                   <li>✓ Cost-optimized</li>
                   <li>✓ 800 words</li>
