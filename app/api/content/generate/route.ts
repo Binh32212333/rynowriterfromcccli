@@ -67,7 +67,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    console.log(`💰 Mode: ${generationMode || 'env-based'} | Budget: ${budgetMode} | Model: ${useCheaperModel ? 'grok-3-mini' : 'grok-4-0709'} | Images: ${imageCount}`)
+    console.log(`💰 Mode: ${generationMode || 'env-based'} | Budget: ${budgetMode} | Model: ${useCheaperModel ? 'grok-2-latest' : 'grok-beta'} | Images: ${imageCount}`)
 
     // Generate content using xAI
     const generatedContent = await generateContent({
@@ -76,7 +76,7 @@ export async function POST(request: NextRequest) {
       contentType: 'blog post',
       tone: 'professional',
       length: contentLength,
-      model: useCheaperModel ? 'grok-3-mini' : 'grok-4-0709',
+      model: useCheaperModel ? 'grok-2-latest' : 'grok-beta',
     })
 
     // Intelligent image generation with automatic strategy selection
@@ -147,7 +147,7 @@ export async function POST(request: NextRequest) {
                 generationMode === 'most-saving' ? 'budget' :
                 generationMode === 'normal' ? 'standard' :
                 (budgetMode ? 'budget' : (skipEnhanced ? 'standard' : 'smart')),
-      model: useCheaperModel ? 'grok-3-mini' : 'grok-4-0709',
+      model: useCheaperModel ? 'grok-2-latest' : 'grok-beta',
     }
 
     console.log('📊 Token usage:', tokenStats)

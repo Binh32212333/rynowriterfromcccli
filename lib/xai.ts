@@ -4,7 +4,7 @@ export interface GenerateContentParams {
   contentType?: string
   tone?: string
   length?: number
-  model?: 'grok-4-0709' | 'grok-3-mini'
+  model?: 'grok-beta' | 'grok-2-latest'
 }
 
 export interface GenerateImageParams {
@@ -38,7 +38,7 @@ export async function generateContent(
   const { apiKey, keywords, contentType = 'blog post', tone = 'professional', length = 1000, model: paramModel } = params
 
   // Use provided model or fallback to environment variable or default
-  const model = paramModel || (process.env.USE_CHEAPER_MODEL === 'true' ? 'grok-3-mini' : 'grok-4-0709')
+  const model = paramModel || (process.env.USE_CHEAPER_MODEL === 'true' ? 'grok-2-latest' : 'grok-beta')
 
   console.log(`📝 Generating content with model: ${model}`)
 
@@ -127,7 +127,7 @@ export async function generateImage(
         'Authorization': `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        model: 'grok-2-image-1212',
+        model: 'grok-2-vision-beta',
         prompt: prompt,
         n: 1,
       }),
@@ -248,7 +248,7 @@ export async function analyzeImageWithVision(
             ]
           }
         ],
-        model: 'grok-2-vision-1212',
+        model: 'grok-2-vision-beta',
         temperature: 0.5,
       }),
     })
@@ -370,7 +370,7 @@ Title: "${title}"
 Should we use enhanced image generation (search real images + AI vision + regenerate) or standard AI generation?`
           }
         ],
-        model: 'grok-4-0709',
+        model: 'grok-beta',
         temperature: 0.3,
       }),
     })
